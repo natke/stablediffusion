@@ -1,1 +1,5 @@
 .cache
+models
+*.tar.gz
+
+

@@ -118,8 +118,24 @@ python run_stablediffusion_df.py
 
 ## Generate model with Olive
 
+```bash
 export TRANFORMERS_CACHE=`pwd`/.cache
+git clone https://github.com/microsoft/Olive.git
+cd Olive
+pip install .
+cd examples\directml\stable_diffusion_xl
+python stable_diffusion_xl.py --provider cuda --optimize --tempdir .
+```
 
+This produces models here
+
+## Generate models with Optimum
+
+The following script loads the stable diffusion pipeline from HuggingFace and exports the models in ONNX format using optimum.
+
+```bash
+python run_stablediffusion_opt.py
+```
 
 
 
